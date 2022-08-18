@@ -1,12 +1,14 @@
 import Header from '@/components/common/Header'
+import { MainLayout } from '@/components/common/layout'
 import { GetStaticPropsContext } from 'next'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
+import { NextPageWithLayout } from '../models'
 
 interface Props {}
 // const Header = dynamic(() => import('@/components/common/Header'), { ssr: false })
-const About = (props: Props) => {
+const About: NextPageWithLayout = (props: Props) => {
   const [postList, setPostList] = useState([])
   const router = useRouter()
   console.log('About query', router.query)
@@ -33,7 +35,7 @@ const About = (props: Props) => {
     )
   }
   return (
-    <div>
+    <>
       <h1>About page</h1>
       <Header />
       <ul>
@@ -42,9 +44,11 @@ const About = (props: Props) => {
         ))}
       </ul>
       <button onClick={handlNextPage}>Next Page</button>
-    </div>
+    </>
   )
 }
+
+About.Layout = MainLayout
 
 export const getStaticProps = (context: GetStaticPropsContext) => {
   console.log('GET STATIC PROPS')
