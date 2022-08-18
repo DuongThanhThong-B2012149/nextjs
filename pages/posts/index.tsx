@@ -13,7 +13,14 @@ const PostListPage = ({ posts }: PostListPageProps) => {
       <ul>
         {posts.map((post: any, index: any) => (
           <Link key={index} href={`/posts/${post.id}`} prefetch={false}>
-            <li>
+            <li
+              style={{
+                border: '1px solid #ccc',
+                padding: '8px',
+                margin: '8px',
+                cursor: 'pointer',
+              }}
+            >
               <a>{post.title}</a>
             </li>
           </Link>
