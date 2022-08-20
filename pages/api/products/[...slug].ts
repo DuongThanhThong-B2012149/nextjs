@@ -6,5 +6,5 @@ type Data = {
 }
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  res.status(200).json({ name: 'Herocode dev' })
+  res.status(200).json({ name: 'Catch all route product' })
 }
