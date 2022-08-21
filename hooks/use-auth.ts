@@ -14,6 +14,8 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     dedupingInterval: 60 * 60 * 100, // 1hr
     ...options,
   })
+
+  const firstLoading = profile === undefined && error === undefined
   const login = async () => {
     await authApi.login({
       username: 'test123123',
@@ -31,5 +33,6 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     error,
     login,
     logout,
+    firstLoading,
   }
 }
