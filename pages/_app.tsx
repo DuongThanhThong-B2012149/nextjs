@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { AppPropsWithLayout } from '../models'
-import { EmptyLayout } from '@/components/common/layout'
+import { EmptyLayout } from '@/components/layout'
 import { SWRConfig } from 'swr'
 import axiosClient from '@/api/axios-client'
 

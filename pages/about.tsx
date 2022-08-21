@@ -1,9 +1,8 @@
 import Header from '@/components/common/Header'
-import { MainLayout } from '@/components/common/layout'
+import { AdminLayout } from '@/components/layout'
 import { GetStaticPropsContext } from 'next'
-import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
-import { ReactElement, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NextPageWithLayout } from '../models'
 
 interface Props {}
@@ -48,7 +47,7 @@ const About: NextPageWithLayout = (props: Props) => {
   )
 }
 
-About.Layout = MainLayout
+About.Layout = AdminLayout
 
 export const getStaticProps = (context: GetStaticPropsContext) => {
   console.log('GET STATIC PROPS')
